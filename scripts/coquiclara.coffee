@@ -33,7 +33,8 @@ module.exports = (robot) ->
 
   twit = undefined
 
-  robot.respond /(.+) tweet(\s*)?$/i, (msg) ->
+  #robot.respond /(.+) tweet(\s*)?$/i, (msg) ->
+  robot.respond /(.+)/i, (msg) ->
     unless auth.consumer_key
       msg.send "Please set the HUBOT_TWITTER_CONSUMER_KEY environment variable."
       return
@@ -56,7 +57,8 @@ module.exports = (robot) ->
         msg.send "Encountered a problem verifying twitter credentials :(", inspect err
         return
 
-      q = escape(msg.match[1])
+      #q = escape(msg.match[1])
+      q = "#coquiclara"
       twit.search q, (err, data) ->
         if err
           msg.send "Encountered a problem twitter searching :(", inspect err
