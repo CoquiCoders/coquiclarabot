@@ -1,1 +1,1 @@
-web: bin/hubot -a twilio -n Coquiclara
+web: bin/hubot -a twilio -n coquiclara
